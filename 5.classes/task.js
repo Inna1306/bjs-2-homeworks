@@ -89,7 +89,7 @@ class Library {
     }
 }
 
-// Тестовый сценарий
+
 const library = new Library("Городская библиотека");
 
 const magazine = new Magazine("National Geographic", 2020, 120);
@@ -122,14 +122,14 @@ console.log("\nКнига 1919 года:", found1919 ? found1919.name : "Не н
 const issuedBook = library.giveBookByName("Война и мир");
 console.log("\nВыдана книга:", issuedBook ? issuedBook.name : "Не найдена");
 
-// Повредить выданную книгу
+
 if (issuedBook) {
     issuedBook.state = 20;
     console.log("Состояние после повреждения:", issuedBook.state);
-    // Восстановить книгу
+
     issuedBook.fix();
     console.log("Состояние после восстановления:", issuedBook.state);
-    // Попытаться добавить обратно
+
     library.addBook(issuedBook);
     console.log("\nКниги в библиотеке после возврата:", library.books.map(b => b.name));
 }
